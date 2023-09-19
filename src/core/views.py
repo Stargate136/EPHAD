@@ -1,3 +1,5 @@
-from django.shortcuts import render
+from django.views.generic import TemplateView
 
-# Create your views here.
+
+class UnderConstructionView(TemplateView):
+    template_name = 'core/under_construction.html'
