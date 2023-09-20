@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     "core",
     "home",
     "cv",
-    "portfolio"
+    "portfolio",
+    "contact"
 ]
 
 MIDDLEWARE = [
