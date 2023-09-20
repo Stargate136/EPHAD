@@ -1,0 +1,43 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <!-- Titre et description du projet -->
+            <h1 class="display-4 mb-3">{{ project.title }}</h1>
+
+            <!-- Image du projet avec description -->
+            <div class="row mb-4">
+                <div class="col-lg-4">
+                    <img src="{% if project.image %}{{ project.image.url }}{% endif %}" alt="{{ project.title }}" class="img-fluid rounded shadow">
+                </div>
+
+                <div class="col-lg-8">
+                    <h4 class="mb-3">Description</h4>
+                    <p class="lead text-muted">{{ project.description }}</p>
+                </div>
+            </div>
+
+
+            <!-- Détails du projet -->
+            <div class="mt-4">
+                {{ project.details|linebreaks }}
+            </div>
+
+            <!-- Liens du projet -->
+            <div class="d-flex justify-content-center mt-5">
+                <a href="{{ project.url }}" target="_blank" class="btn btn-outline-primary btn-lg mr-3">
+                    <i class="fas fa-external-link-alt"></i> Voir le projet
+                </a>
+                {% if project.github_url %}
+                    <a href="{{ project.github_url }}" target="_blank" class="btn btn-outline-dark btn-lg">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

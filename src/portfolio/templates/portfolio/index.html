@@ -1,0 +1,28 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<div class="container mt-5 text-center">
+    <h1 class="mb-4">Mon Portfolio</h1>
+    <p>Découvrez certains des projets sur lesquels j'ai travaillé.</p>
+
+    <div class="row justify-content-center">
+        {% for project in projects %}
+        <div class="col-md-4 mb-4">
+            <a href="{% url 'portfolio:detail' project.slug %}" class="text-decoration-none link-dark card-link-hover">
+                <div class="card h-100">
+                    <!-- Ici, si votre projet dispose d'une image, nous pouvons l'afficher comme un en-tête de carte -->
+                    {% if project.image %}
+                        <img src="{{ project.image.url }}" alt="{{ project.title }}" class="card-img-top">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.title }}</h5>
+                        <p class="card-text text-muted">{{ project.description|truncatechars:100 }}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
