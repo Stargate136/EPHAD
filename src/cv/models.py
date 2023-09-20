@@ -67,8 +67,11 @@ class Certification(models.Model):
 
 
 class CV(models.Model):
-    personal_info = models.OneToOneField(PersonalInformation, on_delete=models.CASCADE)
-    profile = models.OneToOneField(Profile, on_delete=models.CASCADE)
+    title = models.CharField(max_length=255)
+    display_order = models.PositiveIntegerField(null=True, blank=True)
+
+    personal_info = models.ForeignKey(PersonalInformation, on_delete=models.CASCADE)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     experiences = models.ManyToManyField(Experience)
     educations = models.ManyToManyField(Education)
     skills = models.ManyToManyField(Skill)
@@ -76,3 +79,23 @@ class CV(models.Model):
     hobbies = models.ManyToManyField(Hobby)
     projects = models.ManyToManyField(Project)
     certifications = models.ManyToManyField(Certification)
+
+    def save(self, *args, **kwargs):
+        # If the instance already has an ID, it's an update
+        if self.id:
+            # Get the old display order
+            old_order = CV.objects.get(id=self.id).display_order
+            # If the display order changed
+            if old_order != self.display_order:
+                # Update the other CV objects
+                if old_order < self.display_order:
+                    # If the display order increased, shift the CVs between the old order and the new order
+                    CV.objects.filter(display_order__lte=self.display_order, display_order__gt=old_order).update(display_order=models.F('display_order') - 1)
+                else:
+                    # If the display order decreased, shift the CVs between the new order and the old order
+                    CV.objects.filter(display_order__gte=self.display_order, display_order__lt=old_order).update(display_order=models.F('display_order') + 1)
+        else:  # If it's a new instance
+            # Shift all CVs with display_order >= the current display_order
+            CV.objects.filter(display_order__gte=self.display_order).update(display_order=models.F('display_order') + 1)
+
+        super(CV, self).save(*args, **kwargs)
