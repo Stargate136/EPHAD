@@ -9,7 +9,22 @@
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- Feuilles de style supplémentaires -->
+    <!-- TODO : transférer le CSS dans un fichier a part -->
+    <style>
+        .card-link-hover:hover .card {
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+            transform: translateY(-3px);
+            transition: all 0.3s ease-in-out;
+        }
+        .card-link-hover:active .card {
+            transform: translateY(0);
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
     {% block extra_css %}{% endblock %}
 </head>
 <body>
@@ -27,7 +42,7 @@
                     <a class="nav-link" href="{% url 'cv:index' %}">CV</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'core:under_construction' %}">Portfolio</a>
+                    <a class="nav-link" href="{% url 'portfolio:index' %}">Portfolio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'core:under_construction' %}">Contact</a>
