@@ -83,6 +83,11 @@ class CV(models.Model):
     certifications = models.ManyToManyField(Certification)
 
     def save(self, *args, **kwargs):
+        if self.display_order is None:
+            # Assign the current maximum value of display_order + 1
+            max_order = CV.objects.all().aggregate(models.Max('display_order'))['display_order__max'] or 0
+            self.display_order = max_order + 1
+
         # If the instance already has an ID, it's an update
         if self.id:
             # Get the old display order
