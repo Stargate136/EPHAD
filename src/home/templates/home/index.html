@@ -5,6 +5,8 @@
 <!-- TODO : Reprendre la page d'accueil pour la personnaliser -->
 
 {% block content %}
+
+<div class="container mt-5 text-center">
     <!-- Section d'introduction -->
     <header class="mb-4">
         <h1>Bonjour, je suis [Ton Nom]</h1>
@@ -25,6 +27,7 @@
         <p>N'hésitez pas à <a href="{% url 'core:under_construction' %}">me contacter</a> ou à consulter mon <a href="{% url 'core:under_construction' %}">portfolio complet</a>.</p>
 
     </section>
+</div>
 {% endblock %}
 
 </html>
