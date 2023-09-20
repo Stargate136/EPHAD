@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 
 import environ
+from django.core.exceptions import ImproperlyConfigured
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,6 +32,10 @@ DEBUG = env.bool("DEBUG")
 
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
 
+ENVIRONMENT = env('DJANGO_ENVIRONMENT')
+
+if not ENVIRONMENT:
+    raise ImproperlyConfigured("The DJANGO_ENVIRONMENT environment variable is not set!")
 
 # Application definition
 
@@ -44,7 +49,7 @@ INSTALLED_APPS = [
 
     "core",
     "home",
-
+    "cv",
 ]
 
 MIDDLEWARE = [
@@ -129,3 +134,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media/"

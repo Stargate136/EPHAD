@@ -3,6 +3,6 @@ venv/
 .env
 *.sqlite3
 *.db
-/media/
-/static/
+*/media/
+*/static/
 .idea/
