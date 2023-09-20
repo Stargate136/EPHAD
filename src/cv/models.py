@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import slugify
 
 
 # Create your models here.
@@ -68,6 +69,7 @@ class Certification(models.Model):
 
 class CV(models.Model):
     title = models.CharField(max_length=255)
+    slug = models.SlugField(unique=True, max_length=255)
     display_order = models.PositiveIntegerField(null=True, blank=True)
 
     personal_info = models.ForeignKey(PersonalInformation, on_delete=models.CASCADE)
@@ -97,5 +99,15 @@ class CV(models.Model):
         else:  # If it's a new instance
             # Shift all CVs with display_order >= the current display_order
             CV.objects.filter(display_order__gte=self.display_order).update(display_order=models.F('display_order') + 1)
+            self.slug = slugify(self.title)
 
         super(CV, self).save(*args, **kwargs)
+
+    def get_skills(self, skill_type):
+        return self.skills.filter(skill_type=skill_type)
+
+    def get_hard_skills(self):
+        return self.get_skills("HARD")
+
+    def get_soft_skills(self):
+        return self.get_skills("SOFT")
