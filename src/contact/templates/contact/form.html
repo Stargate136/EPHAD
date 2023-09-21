@@ -9,7 +9,7 @@
                 Si vous avez des questions, des préoccupations ou souhaitez discuter d'une opportunité, n'hésitez pas à remplir le formulaire ci-dessous. Je reviendrai vers vous dès que possible.
             </p>
 
-            <form method="post" class="">
+            <form method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <input type="submit" class="btn btn-primary" value="Envoyer"/>
