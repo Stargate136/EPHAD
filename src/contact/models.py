@@ -3,9 +3,9 @@ from django.db import models
 
 # Create your models here.
 class ContactMessage(models.Model):
-    email = models.EmailField()
-    subject = models.CharField(max_length=100)
-    message = models.TextField()
+    email = models.EmailField(verbose_name="E-mail")
+    subject = models.CharField(max_length=100, verbose_name="Sujet")
+    message = models.TextField(verbose_name="Message")
 
     is_processed = models.BooleanField(default=False)
     processed_at = models.DateTimeField(null=True, blank=True)

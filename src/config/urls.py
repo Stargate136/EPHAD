@@ -25,7 +25,8 @@ urlpatterns = [
     path("", include("home.urls")),
     path("core/", include("core.urls")),
     path("cv/", include("cv.urls")),
-    path("portfolio", include("portfolio.urls"))
+    path("portfolio/", include("portfolio.urls")),
+    path("contact/", include("contact.urls")),
 ]
 
 if settings.ENVIRONMENT == "DEV":
