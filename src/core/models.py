@@ -1,6 +1,28 @@
 from django.db import models
 
 
+class PersonalInfo(models.Model):
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    email = models.EmailField()
+    phone = models.CharField(max_length=20)
+    linkedin = models.URLField()
+    github = models.URLField()
+
+    def save(self, *args, **kwargs):
+        self.pk = 1
+        super(PersonalInfo, self).save(*args, **kwargs)
+
+    @classmethod
+    def load(cls):
+        obj, created = cls.objects.get_or_create(pk=1)
+        return obj
+
+    def full_name(self):
+        return f"{self.first_name} {self.last_name}"
+
+
+
 class Section(models.Model):
     PAGES = [("HOME", "Accueil"),
              ("ABOUT", "A propos")]
@@ -32,3 +54,6 @@ class Section(models.Model):
         else:  # If it's a new instance
             # Shift all Sections with display_order >= the current display_order
             Section.objects.filter(display_order__gte=self.display_order).update(display_order=models.F('display_order') + 1)
+
+        super().save(*args, **kwargs)
+

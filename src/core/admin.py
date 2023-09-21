@@ -1,5 +1,19 @@
 from django.contrib import admin
-from .models import Section
+from .models import PersonalInfo, Section
+
+
+@admin.register(PersonalInfo)
+class PersonalInfoAdmin(admin.ModelAdmin):
+    list_display = ('first_name', 'last_name', 'email', 'phone')
+
+    def has_add_permission(self, request):
+        return not bool(PersonalInfo.objects.count())
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+    def has_change_permission(self, request, obj=None):
+        return True
 
 
 @admin.register(Section)
