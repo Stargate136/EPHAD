@@ -2,9 +2,9 @@
 
 {% block content %}
 <div class="container mt-5">
+    <h1 class="text-center mb-4">Contactez-moi</h1>
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <h2>Contactez-moi</h2>
             <p class="mb-4">
                 Si vous avez des questions, des préoccupations ou souhaitez discuter d'une opportunité, n'hésitez pas à remplir le formulaire ci-dessous. Je reviendrai vers vous dès que possible.
             </p>
@@ -13,7 +13,6 @@
                 {% csrf_token %}
                 {{ form.as_p }}
                 <input type="submit" class="btn btn-primary" value="Envoyer"/>
-
             </form>
         </div>
 
@@ -21,10 +20,10 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Mes Coordonnées</h4>
-                    <p><i class="fas fa-envelope"></i> monemail@gmail.com</p>
-                    <p><i class="fas fa-phone"></i> +33 6 12 34 56 78</p>
-                    <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/monprofil" target="_blank">LinkedIn</a></p>
-                    <p><i class="fab fa-github"></i> <a href="https://github.com/monprofil" target="_blank">GitHub</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:{{ personal_info.email }}">{{ personal_info.email }}</a></p>
+                    <p><i class="fas fa-phone"></i><a href="tel:{{ personal_info.phone }}">{{ personal_info.phone }}</a></p>
+                    <p><i class="fab fa-linkedin"></i> <a href="{{ personal_info.linkedin }}" target="_blank">LinkedIn</a></p>
+                    <p><i class="fab fa-github"></i> <a href="{{ personal_info.github }}" target="_blank">GitHub</a></p>
                 </div>
             </div>
         </div>

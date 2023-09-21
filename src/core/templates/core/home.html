@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="container mt-5">
-    <h1 class="text-center mb-4">Bonjour</h1>
+    <h1 class="text-center mb-4">Bonjour, je suis {{ personal_info.full_name }}</h1>
     {% for section in sections %}
         <div class="section mb-5">
             <h2 class="mb-3">{{ section.title }}</h2>
