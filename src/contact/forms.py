@@ -10,7 +10,7 @@ class ContactForm(forms.ModelForm):
 
     class Meta:
         model = ContactMessage
-        fields = ['email', 'subject', 'message']
+        fields = ['email', 'subject', 'message', 'consent_given']
 
     # Personnalisation éventuelle des widgets (par exemple, pour ajouter des placeholders)
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control',
@@ -21,4 +21,7 @@ class ContactForm(forms.ModelForm):
                               label="Sujet")
     message = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control',
                                                            'placeholder': 'Votre message',
-                                                           'rows': '5'}),)
+                                                           'rows': '5'}))
+    # TODO : reprendre cette case a cocher
+    consent_given = forms.BooleanField(required=True,
+                                       label="")

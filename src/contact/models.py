@@ -7,6 +7,8 @@ class ContactMessage(models.Model):
     subject = models.CharField(max_length=100, verbose_name="Sujet")
     message = models.TextField(verbose_name="Message")
 
+    consent_given = models.BooleanField(default=False)
+
     is_processed = models.BooleanField(default=False)
     processed_at = models.DateTimeField(null=True, blank=True)
 
