@@ -5,13 +5,79 @@ import os
 import django
 from datetime import date
 
+
+# Django configuration
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
 django.setup()
+
+
+from core.models import PersonalInfo, Section
 
 from cv.models import (PersonalInformation, Profile, Experience, Education,
                        Skill, Language, Hobby, Project as CVProject, Certification, CV)
 
 from portfolio.models import Project as PortfolioProject
+
+
+def populate_core():
+    # Sections for Home page
+    home_sections = [
+        {
+            'title': "Introduction",
+            'content': "Je suis un développeur avec des années d'expérience dans divers domaines, y compris le développement web, la science des données et le machine learning. Mon portfolio est une représentation de mon parcours, de mes compétences et de ma passion pour la technologie.",
+            'display_order': 1,
+            'page': 'HOME'
+        },
+        {
+            'title': "Mes projets",
+            'content': "Les projets que j'ai entrepris reflètent mon engagement envers l'excellence et l'innovation. Chaque projet a été une opportunité d'apprendre et de grandir.",
+            'display_order': 2,
+            'page': 'HOME'
+        },
+        {
+            'title': "Collaborons ensemble!",
+            'content': "Si mon profil vous intéresse, n'hésitez pas à me contacter pour discuter de collaborations possibles.",
+            'display_order': 3,
+            'page': 'HOME'
+        }
+    ]
+
+    # Sections for About page
+    about_sections = [
+        {
+            'title': "Mon parcours",
+            'content': "Ayant commencé ma carrière en tant que développeur junior, j'ai gravi les échelons pour travailler sur des projets d'envergure, diriger des équipes et contribuer à des innovations majeures.",
+            'display_order': 1,
+            'page': 'ABOUT'
+        },
+        {
+            'title': "Mes passions",
+            'content': "En dehors de la programmation, j'aime lire, voyager, et passer du temps avec ma famille et mes amis. J'aime aussi explorer de nouvelles technologies et assister à des conférences pour rester à jour.",
+            'display_order': 2,
+            'page': 'ABOUT'
+        },
+        {
+            'title': "Compétences techniques",
+            'content': "Je maîtrise plusieurs langages de programmation, notamment Python, JavaScript et Java. J'ai également de l'expérience avec diverses bases de données, frameworks et outils de déploiement.",
+            'display_order': 3,
+            'page': 'ABOUT'
+        }
+    ]
+
+    for section in home_sections + about_sections:
+        Section.objects.create(**section)
+
+    print("'core' app : 3 Sections added to Home page and 3 sections added to About page.")
+
+    info = PersonalInfo.load()
+    info.first_name = "John"
+    info.last_name = "Doe"
+    info.email = "johndoe@example.com"
+    info.phone = "123-456-7890"
+    info.linkedin = "https://www.linkedin.com/in/johndoe/"
+    info.github = "https://github.com/johndoe"
+    info.save()
+
 
 def populate_cv():
     # Informations personnelles
@@ -275,9 +341,6 @@ def populate_portfolio():
     print("'portfolio' app : 10 projects added successfully !")
 
 
-def main():
-    pass
-
-
-if __name__ == "main":
-    main()
+populate_core()
+populate_cv()
+populate_portfolio()
