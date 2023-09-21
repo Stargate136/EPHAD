@@ -106,7 +106,7 @@ class CV(models.Model):
             CV.objects.filter(display_order__gte=self.display_order).update(display_order=models.F('display_order') + 1)
             self.slug = slugify(self.title)
 
-        super(CV, self).save(*args, **kwargs)
+        super().save(*args, **kwargs)
 
     def get_skills(self, skill_type):
         return self.skills.filter(skill_type=skill_type)
