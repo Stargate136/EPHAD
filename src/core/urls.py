@@ -8,5 +8,5 @@ urlpatterns = [
     path("", HomeView.as_view(), name="home"),
     path("a-propos/", AboutView.as_view(), name="about"),
     path('bientot/', UnderConstructionView.as_view(), name='under_construction'),
-    path('politique-de-confidentialite/', PrivacyPolicyView.as_view(), name='privacy_policygit'),
+    path('politique-de-confidentialite/', PrivacyPolicyView.as_view(), name='privacy_policy'),
 ]

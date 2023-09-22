@@ -1,4 +1,3 @@
-
 from django.urls import reverse_lazy
 from django.views.generic.edit import FormView
 from django.contrib import messages
@@ -6,7 +5,7 @@ from .forms import ContactForm
 
 
 class ContactFormView(FormView):
-    template_name = "contact/form.html"
+    template_name = "contact/index.html"
     form_class = ContactForm
     success_url = reverse_lazy("contact:form")  # Mettez l'URL de la page de remerciement ou de confirmation ici.
 

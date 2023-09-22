@@ -11,6 +11,6 @@ class IndexView(ListView):
 
 class ProjectDetailView(DetailView):
     model = Project
-    template_name = "portfolio/project_detail.html"
+    template_name = "portfolio/detail.html"
     context_object_name = "project"
     slug_url_kwarg = 'slug'
