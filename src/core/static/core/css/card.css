@@ -1,3 +1,4 @@
+/* card.css */
 .card {
     display: block;  /* Important pour s'assurer que la balise <a> fonctionne correctement en tant que conteneur */
     position: relative;

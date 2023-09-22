@@ -48,5 +48,4 @@ nav #navbarNav li a:hover {
     background-color: var(--secondary-color);
 }
 
-/* For mobile views, you might want to implement the collapse functionality later.
-When you do, you will have to adjust the styles here accordingly. */
+/* TODO : Implémenter le collapse */

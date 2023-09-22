@@ -1,5 +1,6 @@
-/* Layout */
+/* index.css */
 
+/* Layout */
 .contact-wrapper {
     display: flex;
     justify-content: center;
@@ -8,12 +9,10 @@
     flex-wrap: wrap;
 }
 
-
 /* Style de la première section */
 .contact-form {
     flex: 1; /* La première section prendra autant d'espace que possible */
     max-width: 70%; /* Largeur maximale de la première section */
-    padding: 20px; /* Espacement intérieur de la première section */
 }
 
 /* Style de la deuxième section */

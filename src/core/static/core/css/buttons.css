@@ -55,3 +55,10 @@
 .btn-gradient:hover {
     background: linear-gradient(45deg, #ff6ec4, #5643fa); /* A slightly different gradient on hover */
 }
+
+
+.button-wrapper {
+    display: flex;
+    justify-content: space-around; /* Centrage horizontal */
+    padding-top: 20px; /* Espacement au-dessus du bouton, ajustable selon vos besoins */
+}

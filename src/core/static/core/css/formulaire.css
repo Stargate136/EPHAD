@@ -64,12 +64,6 @@ label {
 
 /* wrappers */
 
-.button-wrapper {
-    display: flex;
-    justify-content: center; /* Centrage horizontal */
-    padding-top: 20px; /* Espacement au-dessus du bouton, ajustable selon vos besoins */
-}
-
 .checkbox-wrapper {
     display: flex;
     align-items: center;  /* Centrage vertical des éléments */
