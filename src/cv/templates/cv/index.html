@@ -1,27 +1,22 @@
 {% extends "core/base.html" %}
+{% load static %}
 
 {% block title %}CV{% endblock %}
-
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'core/css/card.css' %}">
+{% endblock %}
 {% block content %}
-<div class="container mt-5 text-center">
-    <h1 class="mb-4">CV{% if cvs|length > 1 %}s{% endif %}</h1>
-    <!-- TODO : parler un peu de moi -->
+    <h1>CV{% if cvs|length > 1 %}s{% endif %}</h1>
     <p>Je propose plusieurs CVs adaptés à différents postes. Veuillez choisir celui qui vous convient le mieux :</p>
-
-    <div class="row justify-content-center">
+    <section>
         {% for cv in cvs %}
-        <div class="col-md-4 mb-4">
-            <a href="{% url 'cv:detail' cv.slug %}" class="text-decoration-none card-link-hover">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ cv.title }}</h5>
-                        <p class="card-text text-muted">Cliquez pour voir le CV détaillé pour le poste de {{ cv.title }}.</p>
+            <a class="card" href="{% url 'cv:detail' cv.slug %}">
+                <div class="card-content">
+                    <h5>{{ cv.title }}</h5>
+                    <p>Cliquez pour voir le CV détaillé pour le poste de {{ cv.title }}.</p>
 
-                    </div>
                 </div>
             </a>
-        </div>
         {% endfor %}
-    </div>
-</div>
+    </section>
 {% endblock %}

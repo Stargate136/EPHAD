@@ -1,7 +1,9 @@
 {% extends "core/base.html" %}
 {% load static %}
 
-{% block title %}CV de {{ cv.title }}{% endblock %}
+{% block title %}
+    CV de {{ cv.title }}
+{% endblock %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'cv/css/cv.css' %}">

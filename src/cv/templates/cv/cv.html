@@ -1,5 +1,4 @@
 <div class="cv-container">
-
     <div class="container">
         <!-- Sidebar content -->
         <div class="sidebar">
@@ -7,6 +6,8 @@
             <section id="personal-info">
                 <img src="{{ cv.personal_info.profile_picture.url }}" alt="{{ cv.personal_info.full_name }}" width="100" class="profile-image">
                 <h2>{{ cv.personal_info.full_name }}</h2>
+
+                <!-- TODO : ajouter logos -->
                 <p>{{ cv.personal_info.address }}</p>
                 <p>Téléphone : {{ cv.personal_info.phone }}</p>
                 <p>Email : {{ cv.personal_info.email }}</p>

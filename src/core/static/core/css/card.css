@@ -1,0 +1,24 @@
+.card {
+    display: block;  /* Important pour s'assurer que la balise <a> fonctionne correctement en tant que conteneur */
+    position: relative;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    text-decoration: none;  /* Pour supprimer les soulignements par défaut des liens */
+    color: inherit;  /* Pour s'assurer que le texte à l'intérieur de la carte utilise la couleur par défaut */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    display: block;
+}
+
+.card-content {
+    padding: var(--space-md);
+}
