@@ -1,0 +1,64 @@
+/* Layout */
+
+.contact-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+
+/* Style de la première section */
+.contact-form {
+    flex: 1; /* La première section prendra autant d'espace que possible */
+    max-width: 70%; /* Largeur maximale de la première section */
+    padding: 20px; /* Espacement intérieur de la première section */
+}
+
+/* Style de la deuxième section */
+.contact-card {
+    flex: 1; /* La deuxième section prendra autant d'espace que possible */
+    max-width: 30%; /* Largeur maximale de la deuxième section */
+    padding: 20px; /* Espacement intérieur de la deuxième section */
+}
+
+/* Responsive pour mobiles */
+@media (max-width: 768px) {
+    .contact-wrapper {
+        flex-direction: column;
+    }
+    section, .contact-card {
+        max-width: 100%; /* Les sections occupent toute la largeur sur les petits écrans */
+    }
+}
+
+/* Contact card */
+.contact-card {
+    padding: var(--space-lg);
+    background-color: var(--background-color);
+    border: 1px solid var(--secondary-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius);
+    max-width: 350px;
+    margin: var(--space-lg) auto;
+}
+
+.contact-title {
+    margin-bottom: var(--space-md);
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: var(--space-xs);
+}
+
+.contact-item {
+    margin-bottom: var(--space-sm);
+    display: flex;
+    align-items: center;
+}
+
+.contact-icon {
+    margin-right: var(--space-xs);
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}

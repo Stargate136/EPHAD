@@ -1,0 +1,86 @@
+/* formulaire.css */
+
+/* Container du formulaire */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: var(--space-md);
+}
+
+/* Champs du formulaire */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: var(--space-sm) var(--space-md);
+    margin-bottom: var(--space-md);
+    border: 1px solid var(--secondary-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(44, 62, 80, 0.4); /* Using the RGB values of --primary-color for a subtle shadow */
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Étiquettes du formulaire */
+label {
+    display: block;
+    margin-bottom: var(--space-xs);
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+
+
+/* Messages d'erreur et textes d'aide */
+.form-error,
+.form-helper {
+    font-size: 0.875rem;
+    margin-top: var(--space-xs);
+}
+
+.form-error {
+    color: var(--accent-color);
+}
+
+/* wrappers */
+
+.button-wrapper {
+    display: flex;
+    justify-content: center; /* Centrage horizontal */
+    padding-top: 20px; /* Espacement au-dessus du bouton, ajustable selon vos besoins */
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;  /* Centrage vertical des éléments */
+    gap: 10px; /* Espace entre la case à cocher et l'étiquette */
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+    margin: 0; /* Supprimez toute marge par défaut autour de la case à cocher */
+}
+
+.checkbox-wrapper label {
+    flex: 1; /* L'étiquette prend tout l'espace restant, permettant ainsi un retour à la ligne approprié si le texte est trop long */
+}
+/* TODO : Ajoutez d'autres styles pour les cases à cocher et les boutons radio si nécessaire */
