@@ -3,13 +3,13 @@
 {% block title %}À propos{% endblock %}
 
 {% block content %}
-<div class="container mt-5">
-    <h1 class="text-center mb-4">À propos de {{ personal_info.full_name }}</h1>
+<div>
+    <h1>À propos de {{ personal_info.full_name }}</h1>
     {% for section in sections %}
-        <div class="section mb-5">
+        <section>
             <h2 class="mb-3">{{ section.title }}</h2>
             <p>{{ section.content }}</p>
-        </div>
+        </section>
     {% empty %}
         <p class="text-center">Aucune information disponible pour l'instant.</p>
     {% endfor %}

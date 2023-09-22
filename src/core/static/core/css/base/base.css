@@ -20,6 +20,17 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     margin-bottom: var(--space-md);
+    color: var(--primary-color);
+}
+
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    color: inherit; /* This ensures that links within headers retain the header color */
+    text-decoration: none; /* Optionally remove underlines from headers */
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+    text-decoration: underline; /* Adds an underline on hover for links within headers */
 }
 
 h1 {

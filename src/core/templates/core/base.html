@@ -7,15 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ personal_info.full_name }} - {% block title %}{% endblock %}</title>
 
-    <!-- Bootstrap CSS -->
-    <!--
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    -->
-
-    <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- Feuilles de style de base -->
+    <!-- Base style sheets -->
     <link rel="stylesheet" href="{% static 'core/css/base/reset.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/base/variables.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/base/base.css' %}">
@@ -23,6 +15,8 @@
     <link rel="stylesheet" href="{% static 'core/css/base/navbar.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/base/footer.css' %}">
 
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     {% block extra_css %}{% endblock %}
 </head>
@@ -42,15 +36,7 @@
         {% include 'core/base/footer.html' %}
     </footer>
 
-
-    <!-- Scripts JS pour Bootstrap (optionnels) -->
-    <!--
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    -->
-
-    <!-- Scripts supplémentaires -->
+    <!-- Scripts -->
     {% block extra_js %}{% endblock %}
 </body>
 </html>
