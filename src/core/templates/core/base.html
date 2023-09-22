@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -7,77 +8,47 @@
     <title>{{ personal_info.full_name }} - {% block title %}{% endblock %}</title>
 
     <!-- Bootstrap CSS -->
+    <!--
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    -->
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Feuilles de style supplémentaires -->
-    <!-- TODO : transférer le CSS dans un fichier a part -->
-    <style>
-        .card-link-hover:hover .card {
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-            transform: translateY(-3px);
-            transition: all 0.3s ease-in-out;
-        }
-        .card-link-hover:active .card {
-            transform: translateY(0);
-            transition: all 0.3s ease-in-out;
-        }
-    </style>
+    <!-- Feuilles de style de base -->
+    <link rel="stylesheet" href="{% static 'core/css/base/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/base/variables.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/base/base.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/base/layout.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/base/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/base/footer.css' %}">
+
+
     {% block extra_css %}{% endblock %}
 </head>
 
-<body class="d-flex flex-column min-vh-100">
+<body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="{% url 'core:home' %}">{{ personal_info.full_name }}</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'core:home' %}">Accueil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'cv:index' %}">CV</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'portfolio:index' %}">Portfolio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'contact:form' %}">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'core:about' %}">A propos</a>
-                </li>
-                <!-- Ajoute d'autres liens de navigation ici, comme pour les projets, contact, etc. -->
-            </ul>
-        </div>
-    </nav>
-
+    <header>
+        {% include 'core/base/header.html' %}
+    </header>
     <!-- Content -->
-    <div class="flex-grow-1 container mt-4">
+    <div class="content">
         {% block content %}{% endblock %}
     </div>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 bg-dark">
-        <div class="container">
-            <div class="text-muted text-center">
-                © 2023 - Mon Portfolio
-                <br>
-                <a href="{% url 'core:privacy_policy' %}">Politique de confidentialité</a>
-            </div>
-        </div>
+    <footer>
+        {% include 'core/base/footer.html' %}
     </footer>
 
 
     <!-- Scripts JS pour Bootstrap (optionnels) -->
+    <!--
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    -->
 
     <!-- Scripts supplémentaires -->
     {% block extra_js %}{% endblock %}

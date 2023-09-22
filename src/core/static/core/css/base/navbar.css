@@ -1,0 +1,52 @@
+/* navbar.css */
+
+/* Base Navbar Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-sm) var(--space-md);
+    background-color: var(--primary-color);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+nav a.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+nav a.logo:hover {
+    color: var(--accent-color);
+}
+
+/* Navbar Navigation Styles */
+nav #navbarNav {
+    display: flex;
+}
+
+nav #navbarNav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav #navbarNav li {
+    margin: 0 var(--space-xs);
+}
+
+nav #navbarNav li a {
+    font-size: 1em;
+    padding: var(--space-xs) var(--space-sm);
+    color: var(--text-light);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+nav #navbarNav li a:hover {
+    background-color: var(--secondary-color);
+}
+
+/* For mobile views, you might want to implement the collapse functionality later.
+When you do, you will have to adjust the styles here accordingly. */

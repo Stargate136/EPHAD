@@ -1,0 +1,28 @@
+/* footer.css */
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: var(--space-md);
+    border-top: 1px solid var(--border-color);
+}
+
+footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 0 var(--space-xs);
+}
+
+footer a:hover {
+    color: var(--text-light);
+    text-decoration: underline;
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 768px) {
+    footer {
+        padding: var(--space-sm);
+    }
+}

@@ -1,0 +1,49 @@
+/* layout.css */
+
+/* Ensure full height layout */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Sticky header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-sm) 0;
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+/* Main content container */
+.content {
+    padding: var(--space-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: calc(var(--space-sm) + 60px); /* Adjust this value based on your header's height */
+    flex: 1 0 auto; /* Allow the content to grow and shrink, but not to shrink below its minimum content size */
+}
+
+/* Sticky footer */
+footer {
+    padding: var(--space-md) 0;
+    flex-shrink: 0; /* Prevent footer from shrinking */
+}
+
+/* Utilize flexbox for sticky footer */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .content {
+        padding: var(--space-md);
+    }
+
+    header, footer {
+        padding: var(--space-xs);
+    }
+}

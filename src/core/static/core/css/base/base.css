@@ -1,0 +1,66 @@
+/* base.css */
+
+body {
+    font-family: var(--font-base);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6; /* General line height for readability */
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    margin-bottom: var(--space-md);
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-top: var(--space-xl);
+}
+
+h2 {
+    font-size: 2em;
+    margin-top: var(--space-lg);
+}
+
+h3 {
+    font-size: 1.75em;
+    margin-top: var(--space-md);
+}
+
+h4 {
+    font-size: 1.5em;
+    margin-top: var(--space-md);
+}
+
+h5 {
+    font-size: 1.25em;
+    margin-top: var(--space-sm);
+}
+
+h6 {
+    font-size: 1em;
+    margin-top: var(--space-sm);
+}
+
+p {
+    margin-bottom: var(--space-md);
+}
+
+ul, ol {
+    margin-bottom: var(--space-md);
+    padding-left: var(--space-lg);
+}
+
+li {
+    margin-bottom: var(--space-xs);
+}
