@@ -19,4 +19,7 @@
     --space-lg: 32px;
     --space-xl: 48px;
     --space-xxl: 64px;
+
+    /* Border radius */
+    --border-radius: 8px;
 }
