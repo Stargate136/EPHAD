@@ -77,4 +77,3 @@ label {
 .checkbox-wrapper label {
     flex: 1; /* L'étiquette prend tout l'espace restant, permettant ainsi un retour à la ligne approprié si le texte est trop long */
 }
-/* TODO : Ajoutez d'autres styles pour les cases à cocher et les boutons radio si nécessaire */

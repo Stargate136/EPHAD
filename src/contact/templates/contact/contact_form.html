@@ -27,15 +27,16 @@
                 {{ form.email.label_tag }} {{ form.email }}
                 {{ form.subject.label_tag }} {{ form.subject }}
                 {{ form.message.label_tag }} {{ form.message }}
-                {{ form.captcha }}
-                <!-- TODO : ajouter captcha -->
                 <div class="button-wrapper">
+                    {{ form.captcha }}
                     <input class="btn btn-outline-primary" type="submit"  value="Envoyer"/>
                 </div>
                 <!-- TODO : modifier le style du message -->
-                {% for message in messages %}
-                    {{ message }}
-                {% endfor %}
+                <div class="messages">
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+                </div>
             </form>
         </section>
 
@@ -43,12 +44,6 @@
             <div class="contact-content">
                 <div class="contact-info">
                     <h4 class="contact-title">Nos Coordonnées</h4>
-                    <p class="contact-item">
-                        <!-- TODO : ajouter email-->
-                        <a href="mailto:">
-                            <i class="contact-icon fas fa-envelope"></i>
-                        </a>
-                    </p>
                     <p class="contact-item">
                         <a href="tel:0155821650">
                             <i class="contact-icon fas fa-phone"></i> 01 55 82 16 50

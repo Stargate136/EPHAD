@@ -14,6 +14,7 @@ class ContactFormView(FormView):
         email = form.cleaned_data.get("email")
         subject = form.cleaned_data.get("subject")
         message = form.cleaned_data.get("message")
+        # TODO : changer l'adresse email avec la vraie
         send_mail(subject, message, email, ["test@gmail.com"])
         messages.success(self.request, "Votre message a été envoyé avec succès!")
         return super().form_valid(form)
