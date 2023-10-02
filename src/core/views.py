@@ -13,5 +13,5 @@ class UnderConstructionView(TemplateView):
     template_name = 'core/under_construction.html'
 
 
-class PrivacyPolicyView(TemplateView):
-    template_name = "core/privacy_policy.html"
+class PersonalDataAndCookiesView(TemplateView):
+    template_name = "core/personal_data_and_cookies.html"
