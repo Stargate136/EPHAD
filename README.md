@@ -9,8 +9,8 @@
 
 ## TODO
 - Ajouter captcha
-- Ajouter l'envoi d'email
 - Remplir les pages
+- Configurer le serveur SMTP
 
 # Ce dont on a besoin
 - logo

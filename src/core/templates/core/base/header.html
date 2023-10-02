@@ -1,6 +1,9 @@
+{% load static %}
 <nav>
-    <a class="logo" href="{% url 'core:home' %}">Les 4 saisons</a>
-    <!-- TODO : Remplacer par le logo -->
+    <a class="logo" href="{% url 'core:home' %}">
+        <img class="img-logo" src="{% static 'core/img/logo.png' %}" alt="Logo"> EPHAD - Les 4 saisons
+    </a>
+
     <!-- TODO : refaire le collapse
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

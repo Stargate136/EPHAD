@@ -21,6 +21,10 @@ nav a.logo:hover {
     color: var(--accent-color);
 }
 
+nav a.logo img {
+    max-height: 40px;
+}
+
 /* Navbar Navigation Styles */
 nav #navbarNav {
     display: flex;
