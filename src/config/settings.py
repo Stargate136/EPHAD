@@ -49,6 +49,8 @@ INSTALLED_APPS = [
 
     "core",
     "contact",
+
+    "captcha"
 ]
 
 MIDDLEWARE = [
@@ -138,3 +140,6 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media/"
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# TODO : enlever cette ligne et ajouter les clés d'API de reCaptcha
+SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']

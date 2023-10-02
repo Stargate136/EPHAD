@@ -8,9 +8,9 @@
 - contient le formulaire de contact
 
 ## TODO
-- Ajouter captcha
 - Remplir les pages
 - Configurer le serveur SMTP
+- Configurer l'API de reCaptcha
 
 # Ce dont on a besoin
 - logo

@@ -7,16 +7,19 @@
     <link rel="stylesheet" href="{% static 'core/css/formulaire.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/buttons.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/card.css' %}">
-    <link rel="stylesheet" href="{% static 'contact/css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'contact/css/contact_form.css' %}">
 {% endblock %}
 
 {% block content %}
 <div>
-    <h1>Contactez-moi</h1>
+    <h1>Contactez-nous</h1>
     <p>
-        Si vous avez des questions, des préoccupations ou souhaitez discuter d'une opportunité,
-        n'hésitez pas à remplir le formulaire ci-dessous. Je reviendrai vers vous dès que possible.
+        Si vous avez des questions ou si vous souhaitez en savoir plus sur notre établissement
+        et les services que nous proposons, n'hésitez pas à nous contacter.
+        Notre équipe se fera un plaisir de vous répondre dans les plus brefs délais.
+        Remplissez le formulaire ci-dessous ou contactez-nous directement par téléphone ou e-mail.
     </p>
+
     <div class="contact-wrapper">
         <section class="contact-form">
             <form class="form-container" method="post">
@@ -24,6 +27,7 @@
                 {{ form.email.label_tag }} {{ form.email }}
                 {{ form.subject.label_tag }} {{ form.subject }}
                 {{ form.message.label_tag }} {{ form.message }}
+                {{ form.captcha }}
                 <!-- TODO : ajouter captcha -->
                 <div class="button-wrapper">
                     <input class="btn btn-outline-primary" type="submit"  value="Envoyer"/>
@@ -38,7 +42,7 @@
         <section class="contact-card">
             <div class="contact-content">
                 <div class="contact-info">
-                    <h4 class="contact-title">Mes Coordonnées</h4>
+                    <h4 class="contact-title">Nos Coordonnées</h4>
                     <p class="contact-item">
                         <!-- TODO : ajouter email-->
                         <a href="mailto:">
@@ -46,10 +50,12 @@
                         </a>
                     </p>
                     <p class="contact-item">
-                        <!-- TODO  : ajouter tel-->
-                        <a href="tel:">
-                            <i class="contact-icon fas fa-phone"></i>
+                        <a href="tel:0155821650">
+                            <i class="contact-icon fas fa-phone"></i> 01 55 82 16 50
                         </a>
+                    </p>
+                    <p class="contact-item">
+                        <i class="contact-icon fas fa-map-marker-alt"></i> 73 Rue Louise Michel, 93170 Bagnolet
                     </p>
                 </div>
             </div>
