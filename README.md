@@ -21,6 +21,13 @@
 - Clé d'API pour captcha
 
 # A mettre dans un fichier .env a la racine du projet
-```
 
+pour générer la SECRET_KEY :
+`python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'`
+## En local
+```
+SECRET_KEY=django-insecure-<clé_secrete_générée_avec_la_commande_du_dessus
+DEBUG=True
+ALLOWED_HOSTS="127.0.0.1
+DJANGO_ENVIRONMENT=DEV
 ```
