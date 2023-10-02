@@ -4,14 +4,6 @@
 
 {% block content %}
 <div>
-    <h1>Bonjour, je suis {{ personal_info.full_name }}</h1>
-    {% for section in sections %}
-        <section>
-            <h2>{{ section.title }}</h2>
-            <p>{{ section.content }}</p>
-        </section>
-    {% empty %}
-        <p class="no-section">Aucune information disponible pour l'instant.</p>
-    {% endfor %}
+    <h1>Bonjour</h1>
 </div>
 {% endblock %}

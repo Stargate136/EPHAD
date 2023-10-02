@@ -5,7 +5,7 @@ from .forms import ContactForm
 
 
 class ContactFormView(FormView):
-    template_name = "contact/index.html"
+    template_name = "contact/contact_form.html"
     form_class = ContactForm
     success_url = reverse_lazy("contact:form")  # Mettez l'URL de la page de remerciement ou de confirmation ici.
 

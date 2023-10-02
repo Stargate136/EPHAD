@@ -24,16 +24,7 @@
                 {{ form.email.label_tag }} {{ form.email }}
                 {{ form.subject.label_tag }} {{ form.subject }}
                 {{ form.message.label_tag }} {{ form.message }}
-                <div class="checkbox-wrapper">
-                    <input type="checkbox" name="{{ form.consent_given.name }}" id="{{ form.consent_given.id_for_label }}" required>
-                    <label for="{{ form.consent_given.id_for_label }}">
-                        J'accepte que les informations que j'ai fournies soient utilisées exclusivement
-                        pour répondre à ma demande et conformément à la
-                        <a href="{% url 'core:under_construction' %}" target="_blank">politique de confidentialité</a>
-                        de ce site.
-                    </label>
-                </div>
-                <!-- TODO : régler le problème de pointeur qui ne change pas -->
+                <!-- TODO : ajouter captcha -->
                 <div class="button-wrapper">
                     <input class="btn btn-outline-primary" type="submit"  value="Envoyer"/>
                 </div>
@@ -47,25 +38,13 @@
                     <p class="contact-item">
                         <a href="mailto:{{ personal_info.email }}">
                             <i class="contact-icon fas fa-envelope"></i>
-                            {{ personal_info.email }}
+                            <!-- TODO : ajouter email-->
                         </a>
                     </p>
                     <p class="contact-item">
                         <a href="tel:{{ personal_info.phone }}">
                             <i class="contact-icon fas fa-phone"></i>
-                            {{ personal_info.phone }}
-                        </a>
-                    </p>
-                    <p class="contact-item">
-                        <a href="{{ personal_info.linkedin }}" target="_blank">
-                            <i class="contact-icon fab fa-linkedin"></i>
-                            LinkedIn
-                        </a>
-                    </p>
-                    <p class="contact-item">
-                        <a href="{{ personal_info.github }}" target="_blank">
-                            <i class="contact-icon fab fa-github"></i>
-                            GitHub
+                            <!-- TODO  : ajouter tel-->
                         </a>
                     </p>
                 </div>

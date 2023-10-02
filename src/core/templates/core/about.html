@@ -4,14 +4,6 @@
 
 {% block content %}
 <div>
-    <h1>À propos de {{ personal_info.full_name }}</h1>
-    {% for section in sections %}
-        <section>
-            <h2 class="mb-3">{{ section.title }}</h2>
-            <p>{{ section.content }}</p>
-        </section>
-    {% empty %}
-        <p class="text-center">Aucune information disponible pour l'instant.</p>
-    {% endfor %}
+    <h1>À propos des 4 saisons</h1>
 </div>
 {% endblock %}

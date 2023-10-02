@@ -1,6 +1,6 @@
 <nav>
-    <a class="logo" href="{% url 'core:home' %}">{{ personal_info.full_name }}</a>
-
+    <a class="logo" href="{% url 'core:home' %}">Les 4 saisons</a>
+    <!-- TODO : Remplacer par le logo -->
     <!-- TODO : refaire le collapse
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -11,12 +11,6 @@
         <ul>
             <li>
                 <a href="{% url 'core:home' %}">Accueil</a>
-            </li>
-            <li>
-                <a href="{% url 'cv:index' %}">CV</a>
-            </li>
-            <li>
-                <a href="{% url 'portfolio:index' %}">Portfolio</a>
             </li>
             <li>
                 <a href="{% url 'contact:form' %}">Contact</a>
