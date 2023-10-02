@@ -11,6 +11,7 @@
 - Remplir les pages
 - Configurer le serveur SMTP
 - Configurer l'API de reCaptcha
+- Agrandir la police
 
 # Ce dont on a besoin
 - logo
@@ -31,3 +32,16 @@ DEBUG=True
 ALLOWED_HOSTS="127.0.0.1
 DJANGO_ENVIRONMENT=DEV
 ```
+
+# Arborescence
+## Accueil
+- GRED VAS NOUS DONNER LES IMAGES ET LE TEXTE A METTRE
+## Contact
+- Formulaire de contact OK
+## A Propos
+- ?
+## Prestations
+- Court séjour
+- Accueil de jour
+- Accueil en situation d'urgence
+- Séjour permanent

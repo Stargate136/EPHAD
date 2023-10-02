@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 
     "core",
     "contact",
+    "services",
 
     "captcha"
 ]

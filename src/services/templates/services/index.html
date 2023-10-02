@@ -1,0 +1,30 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Prestations{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'core/css/buttons.css' %}">
+{% endblock %}
+
+{% block content %}
+<div>
+    <h1>Les prestations</h1>
+    <!-- TODO : ajouter un petit texte sur les prestations -->
+    <ul>
+        <li>
+            <a class="btn btn-outline-primary" href="{% url 'services:short_stay' %}">Court séjour</a>
+        </li>
+        <li>
+            <a class="btn btn-outline-primary" href="{% url 'services:day_care' %}">Accueil de jour</a>
+        </li>
+        <li>
+            <a class="btn btn-outline-primary" href="{% url 'services:emergency_reception' %}">Accueil en situation d'urgence</a>
+        </li>
+        <li>
+            <a class="btn btn-outline-primary" href="{% url 'services:permanent_stay' %}">Séjour permanent</a>
+        </li>
+    </ul>
+    <!-- TODO : à completer -->
+</div>
+{% endblock %}
