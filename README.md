@@ -11,3 +11,16 @@
 - Ajouter captcha
 - Ajouter l'envoi d'email
 - Remplir les pages
+
+# Ce dont on a besoin
+- logo
+- Adresse
+- Mail
+- Telephone 
+- Serveur SMTP
+- Clé d'API pour captcha
+
+# A mettre dans un fichier .env a la racine du projet
+```
+
+```

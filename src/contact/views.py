@@ -1,3 +1,4 @@
+from django.core.mail import send_mail
 from django.urls import reverse_lazy
 from django.views.generic.edit import FormView
 from django.contrib import messages
@@ -10,10 +11,10 @@ class ContactFormView(FormView):
     success_url = reverse_lazy("contact:form")  # Mettez l'URL de la page de remerciement ou de confirmation ici.
 
     def form_valid(self, form):
-        # Si le formulaire est valide, sauvegardez l'objet sans le commettre en base de données.
-        contact_message = form.save(commit=False)
-        # Traitement supplémentaire si nécessaire (comme l'envoi d'un e-mail)
-        contact_message.save()  # Sauvegardez l'objet en base de données.
+        email = form.cleaned_data.get("email")
+        subject = form.cleaned_data.get("subject")
+        message = form.cleaned_data.get("message")
+        send_mail(subject, message, email, ["test@gmail.com"])
         messages.success(self.request, "Votre message a été envoyé avec succès!")
         return super().form_valid(form)
 

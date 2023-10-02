@@ -28,6 +28,10 @@
                 <div class="button-wrapper">
                     <input class="btn btn-outline-primary" type="submit"  value="Envoyer"/>
                 </div>
+                <!-- TODO : modifier le style du message -->
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
             </form>
         </section>
 
@@ -36,15 +40,15 @@
                 <div class="contact-info">
                     <h4 class="contact-title">Mes Coordonnées</h4>
                     <p class="contact-item">
-                        <a href="mailto:{{ personal_info.email }}">
+                        <!-- TODO : ajouter email-->
+                        <a href="mailto:">
                             <i class="contact-icon fas fa-envelope"></i>
-                            <!-- TODO : ajouter email-->
                         </a>
                     </p>
                     <p class="contact-item">
-                        <a href="tel:{{ personal_info.phone }}">
+                        <!-- TODO  : ajouter tel-->
+                        <a href="tel:">
                             <i class="contact-icon fas fa-phone"></i>
-                            <!-- TODO  : ajouter tel-->
                         </a>
                     </p>
                 </div>
