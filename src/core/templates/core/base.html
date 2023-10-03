@@ -10,9 +10,9 @@
     <link rel="icon" href="{% static 'core/img/logo.png' %}" type="image/png">
 
     <!-- Base style sheets -->
-    <link rel="stylesheet" href="{% static 'core/css/base/reset.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/base/variables.css' %}">
-    <link rel="stylesheet" href="{% static 'core/css/base/base.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/base/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/base/styles.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/base/layout.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/base/navbar.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/base/footer.css' %}">
@@ -51,5 +51,14 @@
 
     <!-- Scripts -->
     {% block extra_js %}{% endblock %}
+    <script>
+        const mobileMenuButton = document.getElementById("mobile-menu");
+        const navList = document.querySelector(".nav-list");
+
+        mobileMenuButton.addEventListener("click", () => {
+            navList.classList.toggle("active");
+        });
+
+    </script>
 </body>
 </html>

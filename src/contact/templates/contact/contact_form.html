@@ -4,9 +4,9 @@
 {% block title %}Contact{% endblock %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'core/css/formulaire.css' %}">
-    <link rel="stylesheet" href="{% static 'core/css/buttons.css' %}">
-    <link rel="stylesheet" href="{% static 'core/css/card.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/widgets/forms.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/widgets/buttons.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/widgets/cards.css' %}">
     <link rel="stylesheet" href="{% static 'contact/css/contact_form.css' %}">
 {% endblock %}
 
@@ -17,7 +17,7 @@
         Si vous avez des questions ou si vous souhaitez en savoir plus sur notre établissement
         et les services que nous proposons, n'hésitez pas à nous contacter.
         Notre équipe se fera un plaisir de vous répondre dans les plus brefs délais.
-        Remplissez le formulaire ci-dessous ou contactez-nous directement par téléphone ou e-mail.
+        Remplissez le formulaire ci-dessous ou contactez-nous directement par téléphone.
     </p>
 
     <div class="contact-wrapper">
@@ -27,31 +27,39 @@
                 {{ form.email.label_tag }} {{ form.email }}
                 {{ form.subject.label_tag }} {{ form.subject }}
                 {{ form.message.label_tag }} {{ form.message }}
+
+                {% for message in messages %}
+                    {% if message.tags == "success" %}
+                        <div style="color: green; font-weight: bold;">
+                            <i class="fas fa-check"></i> {{ message }}
+                        </div>
+                    {% elif message.tags == "error" %}
+                        <div style="color: red; font-weight: bold;">
+                            <i class="fas fa-times"></i> {{ message }}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+                
                 <div class="button-wrapper">
                     {{ form.captcha }}
                     <input class="btn btn-outline-primary" type="submit"  value="Envoyer"/>
                 </div>
-                <!-- TODO : modifier le style du message -->
-                <div class="messages">
-                    {% for message in messages %}
-                        {{ message }}
-                    {% endfor %}
-                </div>
             </form>
         </section>
-
         <section class="contact-card">
             <div class="contact-content">
                 <div class="contact-info">
                     <h4 class="contact-title">Nos Coordonnées</h4>
-                    <p class="contact-item">
+                    <ul>
+                        <li class="contact-item">
                         <a href="tel:0155821650">
                             <i class="contact-icon fas fa-phone"></i> 01 55 82 16 50
                         </a>
-                    </p>
-                    <p class="contact-item">
-                        <i class="contact-icon fas fa-map-marker-alt"></i> 73 Rue Louise Michel, 93170 Bagnolet
-                    </p>
+                        </li>
+                        <li class="contact-item">
+                            <i class="contact-icon fas fa-map-marker-alt"></i> 73 Rue Louise Michel, 93170 Bagnolet
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>

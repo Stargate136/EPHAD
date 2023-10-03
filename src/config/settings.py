@@ -35,7 +35,7 @@ ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
 ENVIRONMENT = env('DJANGO_ENVIRONMENT')
 
 if not ENVIRONMENT:
-    raise ImproperlyConfigured("The DJANGO_ENVIRONMENT environment variable is not set!")
+    raise ImproperlyConfigured("The DJANGO_ENVIRONMENT environment variable is not set! (DEV or PROD)")
 
 # Application definition
 
@@ -140,7 +140,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media/"
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = env("EMAIL_HOST")
+EMAIL_PORT = env("EMAIL_PORT")
+EMAIL_USE_TLS = env("EMAIL_USE_TLS")
+EMAIL_HOST_USER = env("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
 
 # TODO : enlever cette ligne et ajouter les clés d'API de reCaptcha
 SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
+
+CONTACT_EMAIL_ADDRESS = env("CONTACT_EMAIL_ADDRESS")
