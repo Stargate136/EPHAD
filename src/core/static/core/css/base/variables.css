@@ -3,11 +3,11 @@
 :root {
     /* Color Palette */
     --primary-color: #122A35;        /* Deep blue */
-    --secondary-color: #2C5D72;        /* Slightly lighter shade of blue */
-    --accent-color: #D22809;        /* An accent color, e.g., a bright red */
-    --background-color: #a6d4e1;    /* General background color */
-    --text-color: #1D2226;        /* General text color */
-    --text-light: #4B737F;        /* Light text color, for use on dark backgrounds */         /* Light text color, for use on dark backgrounds */
+    --secondary-color: #2C5D72;      /* Slightly lighter shade of blue */
+    --accent-color: #D22809;         /* An accent color, e.g., a bright red */
+    --background-color: #ECF0F1;     /* General background color */
+    --text-color: #1D2226;           /* General text color */
+    --text-light: #4B737F;           /* Light text color, for use on dark backgrounds */
 
     /* Fonts */
     --font-base: 'Helvetica Neue', sans-serif;          /* Default font */
